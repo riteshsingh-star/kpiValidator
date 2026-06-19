@@ -42,9 +42,8 @@ class WindowEngine:
                 if variables:
                     variable_values = VariableEngine.evaluate(variables, group)
 
-                # ---------------------------------
+
                 # Window Context
-                # ---------------------------------
                 window_start = timestamp
                 window_end = timestamp + pd.to_timedelta(frequency)
                 window_duration = (window_end - window_start).total_seconds()

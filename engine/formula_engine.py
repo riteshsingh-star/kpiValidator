@@ -15,9 +15,8 @@ class FormulaEngine:
         if variables is None:
             variables = {}
 
-        # -----------------------------
+        
         # FUNCTION CONTEXT
-        # -----------------------------
         context = {
             "first": first,
             "last": last,
@@ -27,21 +26,18 @@ class FormulaEngine:
             "max": max_value
         }
 
-        # -----------------------------
+        
         # DATAFRAME COLUMNS
-        # -----------------------------
         for column in dataframe.columns:
             if column != "Timestamp":
                 context[column] = dataframe[column]
 
-        # -----------------------------
+        
         # VARIABLES
-        # -----------------------------
         context.update(variables)
 
-        # -----------------------------
-        # MULTI-LINE FORMULA SUPPORT
-        # -----------------------------
+        
+        # MULTILINE FORMULA SUPPORT
         if isinstance(formula, list):
             last_expression = None
 
@@ -65,9 +61,8 @@ class FormulaEngine:
 
             return eval(last_expression, {}, context)
 
-        # -----------------------------
+        
         # SINGLE LINE SUPPORT
-        # -----------------------------
         if formula is None:
             raise Exception("Formula cannot be None.")
 

@@ -21,11 +21,11 @@ class VariableEngine:
                 expression.strip()
             )
 
-            # -----------------------------
+
             # STATE FUNCTION
             # Example:
             # a = state(TEST_RAW_PURE > 20)
-            # -----------------------------
+
             if (
                 expression.startswith(
                     "state("
@@ -49,9 +49,9 @@ class VariableEngine:
                     )
                 )
 
-            # -----------------------------
+
             # NORMAL FORMULA
-            # -----------------------------
+
             else:
 
                 value = (

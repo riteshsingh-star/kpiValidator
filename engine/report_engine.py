@@ -8,9 +8,8 @@ class ReportEngine:
 
         report_rows = []
 
-        # -----------------------------
+
         # GRANULARITY REPORT
-        # -----------------------------
         for g_name, df in granularity_results.items():
 
             if df.empty:
@@ -25,9 +24,8 @@ class ReportEngine:
                 "AvgKPI": df[kpi_name].mean()
             })
 
-        # -----------------------------
+
         # SHIFT REPORT
-        # -----------------------------
         for s_name, df in shift_results.items():
 
             if df.empty:

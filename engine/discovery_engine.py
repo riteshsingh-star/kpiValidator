@@ -26,7 +26,7 @@ class DiscoveryEngine:
                 elif file_path.endswith('.xlsx'):
                     df = pd.read_excel(file_path, nrows=0)
                 elif file_path.endswith('.parquet'):
-                    df = pd.read_parquet(file_path) # Parquet doesn't support nrows=0 easily in all versions, but it's fast
+                    df = pd.read_parquet(file_path)
                 
                 # Assume first column is Timestamp, others are parameters
                 cols = df.columns.tolist()

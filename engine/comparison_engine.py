@@ -18,9 +18,8 @@ class ComparisonEngine:
             actual_file
         )
 
-        # -----------------------------
+
         # Detect KPI Column
-        # -----------------------------
         def get_kpi_col(df):
 
             cols = [
@@ -45,9 +44,7 @@ class ComparisonEngine:
             actual
         )
 
-        # -----------------------------
         # Standardize KPI Columns
-        # -----------------------------
         expected = expected.rename(
             columns={
                 expected_kpi: "Expected"
@@ -60,9 +57,8 @@ class ComparisonEngine:
             }
         )
 
-        # -----------------------------
+
         # Merge
-        # -----------------------------
         merged = expected.merge(
             actual,
             on="Timestamp",
@@ -93,9 +89,8 @@ class ComparisonEngine:
 
         results = []
 
-        # -----------------------------
+
         # Compare Rows
-        # -----------------------------
         for _, row in merged.iterrows():
 
             expected_value = row[
@@ -150,9 +145,8 @@ class ComparisonEngine:
                 }
             )
 
-        # -----------------------------
+
         # Return Result
-        # -----------------------------
         return pd.DataFrame(
             results,
             columns=[

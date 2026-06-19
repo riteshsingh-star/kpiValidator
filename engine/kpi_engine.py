@@ -20,9 +20,8 @@ class KPIEngine:
         granularity_results = {}
         shift_results = {}
 
-        # -----------------------------
+      
         # CONFIG VALIDATION
-        # -----------------------------
         validation_result = ConfigValidator.validate(config)
 
         if not validation_result["valid"]:
@@ -34,24 +33,21 @@ class KPIEngine:
 
             raise Exception("Invalid KPI configuration")
 
-        # -----------------------------
+      
         # OUTPUT DIRECTORIES
-        # -----------------------------
         Path("output").mkdir(exist_ok=True)
         Path("reports").mkdir(exist_ok=True)
 
-        # -----------------------------
+      
         # LOAD PARAMETER FILES
-        # -----------------------------
         parameter_dfs = []
 
         for parameter in config["parameters"]:
             df = FileLoader.load_file(parameter["file"], parameter["name"])
             parameter_dfs.append(df)
 
-        # -----------------------------
+      
         # MERGE PARAMETERS
-        # -----------------------------
         if len(parameter_dfs) == 0:
             if "start_time" not in config or "end_time" not in config:
                 raise Exception(
@@ -79,9 +75,8 @@ class KPIEngine:
 
             merged = ParameterManager.merge(parameter_dfs)
 
-        # -----------------------------
+      
         # APPLY KPI TIME WINDOW
-        # -----------------------------
         merged["Timestamp"] = pd.to_datetime(merged["Timestamp"])
 
         if "start_time" in config:
@@ -92,15 +87,13 @@ class KPIEngine:
             end_time = pd.to_datetime(config["end_time"])
             merged = merged[merged["Timestamp"] <= end_time]
 
-        # -----------------------------
+      
         # FORMULA
-        # -----------------------------
         raw_formula = config["formula"]
         formula = FormulaPreprocessor.normalize(raw_formula)
 
-        # -----------------------------
+      
         # FORMULA VALIDATION
-        # -----------------------------
         validation = FormulaValidator.validate(
             formula, config["parameters"], config.get("variables", {})
         )
@@ -116,9 +109,8 @@ class KPIEngine:
         print("Configured :", validation["configured"])
         print("Validation Passed")
 
-        # -----------------------------
+      
         # FORMAT GRANULARITY NAME
-        # -----------------------------
         def format_granularity_name(name):
             if "Minutes" in name:
                 return name.replace("Minutes", "Min")
@@ -126,9 +118,8 @@ class KPIEngine:
                 return name.replace("Minute", "Min")
             return name
 
-        # -----------------------------
+      
         # REGULAR GRANULARITIES
-        # -----------------------------
         for granularity_name, frequency in GranularityManager.GRANULARITIES.items():
             result = WindowEngine.calculate(
                 merged,
@@ -150,9 +141,8 @@ class KPIEngine:
             result.to_csv(file_name, index=False)
             print(f"Generated: {file_name}")
 
-        # -----------------------------
+      
         # SHIFT EXECUTION
-        # -----------------------------
         if config.get("generate_shifts", False):
             base_granularity = config.get("base_granularity", "1Minute")
 
@@ -197,9 +187,8 @@ class KPIEngine:
                 result.to_csv(file_name, index=False)
                 print(f"Generated: {file_name}")
 
-        # -----------------------------
+      
         # EXECUTION REPORT
-        # -----------------------------
         from engine.report_engine import ReportEngine
 
         report_df = ReportEngine.generate(

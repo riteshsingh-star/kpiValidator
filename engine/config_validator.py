@@ -8,9 +8,8 @@ class ConfigValidator:
 
         errors = []
 
-        # -------------------------
+        
         # 1. Required fields
-        # -------------------------
         required_fields = [
             "kpi_name",
             "formula",
@@ -24,9 +23,8 @@ class ConfigValidator:
                     f"Missing required field: {field}"
                 )
 
-        # -------------------------
+        
         # 2. Validate parameters
-        # -------------------------
         if "parameters" in config:
 
             for p in config["parameters"]:
@@ -37,9 +35,8 @@ class ConfigValidator:
                 if "file" not in p:
                     errors.append("Parameter missing 'file'")
 
-        # -------------------------
+        
         # 3. Validate granularity
-        # -------------------------
         if "base_granularity" in config:
 
             bg = config["base_granularity"]
@@ -51,9 +48,8 @@ class ConfigValidator:
                     f"Valid: {list(GranularityManager.GRANULARITIES.keys())}"
                 )
 
-        # -------------------------
+        
         # 4. Validate shifts
-        # -------------------------
         if config.get("generate_shifts", False):
 
             valid_shifts = {"Shift1", "Shift2", "Shift3"}
@@ -67,9 +63,8 @@ class ConfigValidator:
                     "Shifts must be list or set"
                 )
 
-        # -------------------------
+        
         # Result
-        # -------------------------
         return {
             "valid": len(errors) == 0,
             "errors": errors

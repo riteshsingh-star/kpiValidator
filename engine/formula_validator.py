@@ -15,9 +15,8 @@ class FormulaValidator:
         "window_end"
     }
 
-    # -----------------------------
+
     # EXTRACT LOCAL VARIABLES
-    # -----------------------------
     @staticmethod
     def extract_local_variables(formula):
 
@@ -48,9 +47,8 @@ class FormulaValidator:
 
         return local_variables
 
-    # -----------------------------
+
     # PARAMETER EXTRACTION
-    # -----------------------------
     @staticmethod
     def extract_parameters(
         formula,
@@ -96,9 +94,8 @@ class FormulaValidator:
             )
         )
 
-    # -----------------------------
+
     # VALIDATE VARIABLE EXPRESSIONS
-    # -----------------------------
     @staticmethod
     def validate_variables(
         variables,
@@ -140,9 +137,8 @@ class FormulaValidator:
             set(missing)
         )
 
-    # -----------------------------
+
     # MAIN VALIDATION
-    # -----------------------------
     @staticmethod
     def validate(
         formula,
