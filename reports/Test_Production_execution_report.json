@@ -1,0 +1,114 @@
+[
+    {
+        "Type": "Granularity",
+        "Name": "1Minute",
+        "TotalRows": 1431,
+        "MaxKPI": 100520.79745963129,
+        "MinKPI": 14047.320209631229,
+        "AvgKPI": 85464.11168214207
+    },
+    {
+        "Type": "Granularity",
+        "Name": "5Minutes",
+        "TotalRows": 288,
+        "MaxKPI": 502316.5244922089,
+        "MinKPI": 28097.013179474787,
+        "AvgKPI": 424649.80492064334
+    },
+    {
+        "Type": "Granularity",
+        "Name": "10Minutes",
+        "TotalRows": 144,
+        "MaxKPI": 1003909.4061197904,
+        "MinKPI": 379044.1413084247,
+        "AvgKPI": 849299.6098412867
+    },
+    {
+        "Type": "Granularity",
+        "Name": "15Minutes",
+        "TotalRows": 96,
+        "MaxKPI": 1504773.538858529,
+        "MinKPI": 799513.8976027485,
+        "AvgKPI": 1273949.41476193
+    },
+    {
+        "Type": "Granularity",
+        "Name": "20Minutes",
+        "TotalRows": 72,
+        "MaxKPI": 2004912.4290988587,
+        "MinKPI": 1219259.8457736925,
+        "AvgKPI": 1698599.2196825738
+    },
+    {
+        "Type": "Granularity",
+        "Name": "30Minutes",
+        "TotalRows": 48,
+        "MaxKPI": 3003041.9684275705,
+        "MinKPI": 2056598.2307447996,
+        "AvgKPI": 2547898.8295238605
+    },
+    {
+        "Type": "Granularity",
+        "Name": "1Hour",
+        "TotalRows": 24,
+        "MaxKPI": 5990671.46494628,
+        "MinKPI": 4257179.907415769,
+        "AvgKPI": 5095797.659047721
+    },
+    {
+        "Type": "Granularity",
+        "Name": "2Hours",
+        "TotalRows": 12,
+        "MaxKPI": 11912809.226999417,
+        "MinKPI": 8608718.107218869,
+        "AvgKPI": 10191595.318095444
+    },
+    {
+        "Type": "Granularity",
+        "Name": "6Hours",
+        "TotalRows": 4,
+        "MaxKPI": 34381550.84822199,
+        "MinKPI": 26733360.706114545,
+        "AvgKPI": 30574785.954286322
+    },
+    {
+        "Type": "Granularity",
+        "Name": "8Hours",
+        "TotalRows": 3,
+        "MaxKPI": 45411678.96556716,
+        "MinKPI": 36253776.219155684,
+        "AvgKPI": 40766381.27238177
+    },
+    {
+        "Type": "Granularity",
+        "Name": "12Hours",
+        "TotalRows": 2,
+        "MaxKPI": 66545890.44491385,
+        "MinKPI": 55753253.37223145,
+        "AvgKPI": 61149571.90857265
+    },
+    {
+        "Type": "Shift",
+        "Name": "Shift1",
+        "TotalRows": 240,
+        "MaxKPI": 75539.56999001527,
+        "MinKPI": 59483.78954712166,
+        "AvgKPI": 73067.99278210774
+    },
+    {
+        "Type": "Shift",
+        "Name": "Shift2",
+        "TotalRows": 476,
+        "MaxKPI": 85424.37177276841,
+        "MinKPI": 14047.320209631229,
+        "AvgKPI": 80287.67879102014
+    },
+    {
+        "Type": "Shift",
+        "Name": "Shift3",
+        "TotalRows": 480,
+        "MaxKPI": 95978.31028732688,
+        "MinKPI": 72462.77303141124,
+        "AvgKPI": 90638.45037707323
+    }
+]

@@ -1,0 +1,15 @@
+{
+    "kpi_name": "Level_of_LTR_1617",
+    "base_granularity": "1Minute",
+    "generate_shifts": true,
+    "variables": {
+        "a": "avg(Level_Of_LTR_1617)"
+    },
+    "formula": "a*(100.08)",
+    "parameters": [
+        {
+            "name": "Level_Of_LTR_1617",
+            "file": "data/Level_Of_LTR_1617.csv"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "kpi_name": "Machine_Duration",
+    "formula": "window_duration",
+    "parameters": [],
+    "start_time": "2026-06-16T10:00:00",
+    "end_time": "2026-06-17T10:00:00"
+}

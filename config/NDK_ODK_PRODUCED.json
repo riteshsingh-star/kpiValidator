@@ -1,0 +1,21 @@
+{
+    "kpi_name": "NDK_ODK_PRODUCED",
+    "variables": {
+        "a": "last(Ndk_Produced) - first(Ndk_Produced)",
+        "b": "last(Odk_Produced) - first(Odk_Produced)",
+        "c": "(a + b) / 1000"
+    },
+    "formula": "c",
+    "parameters": [
+        {
+            "name": "Ndk_Produced",
+            "file": "data/Ndk_Produced.csv"
+        },
+        {
+            "name": "Odk_Produced",
+            "file": "data/Odk_Produced.csv"
+        }
+    ],
+    "base_granularity": "5Minutes",
+    "generate_shifts": true
+}

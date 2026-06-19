@@ -1,0 +1,17 @@
+{
+    "kpi_name": "Power_MCBC_102",
+    "variables": {
+        "a": "avg(MCBC_102_COMPRESSOR_CURRENT)",
+        "b": "1.731*415*a*0.90",
+        "c": "b/1000"
+    },
+    "formula": "c",
+    "parameters": [
+        {
+            "name": "MCBC_102_COMPRESSOR_CURRENT",
+            "file": "data/MCBC_102_COMPRESSOR_CURRENT.csv"
+        }
+    ],
+    "base_granularity": "1Minute",
+    "generate_shifts": true
+}

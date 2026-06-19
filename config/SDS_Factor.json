@@ -1,0 +1,21 @@
+{
+    "kpi_name": "SDS_Factor",
+    "variables": {
+        "a": "avg(Test_WIP_KETTLE_SDS_FEED)",
+        "b": "avg(Test_Col3_Product_Flow)",
+        "c": "a/b"
+    },
+    "formula": "c",
+    "parameters": [
+        {
+            "name": "Test_WIP_KETTLE_SDS_FEED",
+            "file": "data/Test_WIP_KETTLE_SDS_FEED.csv"
+        },
+        {
+            "name": "Test_Col3_Product_Flow",
+            "file": "data/Test_Col3_Product_Flow.csv"
+        }
+    ],
+    "base_granularity": "1Minute",
+    "generate_shifts": true
+}

@@ -1,0 +1,16 @@
+{
+    "kpi_name": "LEVEL_OF_LTR_1618",
+    "variables": {
+        "a": "avg(Level_Of_Ltr_1618)",
+        "b": "a * 69.88"
+    },
+    "formula": "b",
+    "parameters": [
+        {
+            "name": "Level_Of_Ltr_1618",
+            "file": "data/Level_Of_Ltr_1618.csv"
+        }
+    ],
+    "base_granularity": "1Minute",
+    "generate_shifts": true
+}

@@ -1,0 +1,15 @@
+{
+    "kpi_name": "Test_Production",
+    "base_granularity": "1Minute",
+    "generate_shifts": true,
+    "variables": {
+        "a": "sum(TEST_MAIN_POWER)"
+    },
+    "formula": "a",
+    "parameters": [
+        {
+            "name": "TEST_MAIN_POWER",
+            "file": "data/TEST_MAIN_POWER.csv"
+        }
+    ]
+}

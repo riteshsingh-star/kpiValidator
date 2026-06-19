@@ -1,0 +1,19 @@
+[
+    {
+        "kpi_name": "Accessibility",
+        "description": "success / total attempts",
+        "formula": "sum(success)/sum(total)*100",
+        "variables": {
+            "success": "success_attempts",
+            "total": "total_attempts"
+        }
+    },
+    {
+        "kpi_name": "Availability",
+        "description": "uptime percentage",
+        "formula": "avg(uptime)*100",
+        "variables": {
+            "uptime": "uptime"
+        }
+    }
+]
